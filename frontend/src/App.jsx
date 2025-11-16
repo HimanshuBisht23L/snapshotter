@@ -146,7 +146,7 @@ export default function App() {
   const filteredProcs = procs.filter((p) => {
     if (!searchPid.trim()) return true;
     return p.pid.toString().includes(searchPid.trim());
-  });
+  }).sort((a, b) => a.pid - b.pid);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100 p-8">
